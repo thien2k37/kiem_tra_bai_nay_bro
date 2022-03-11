@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="aa" type="text" placeholder="nhapa"> <br>
+<input id="bb" type="text" placeholder="nhapb"> <br>
+<input id="cc" type="text" placeholder="nhapc"> <br>
+
+<button onclick="tinh()">Kiểm Tra</button>
+
+<textarea id="kq"></textarea>
+<script>
+    let canh_a = document.getElementById("aa");
+    let canh_b = document.getElementById("bb");
+    let canh_c = document.getElementById("cc");
+    let kq = document.getElementById("kq");
+    function tinh() {
+        let a = +canh_a.value;
+        let b = +canh_b.value;
+        let c = +canh_c.value;
+        let tra_ve = " "
+        if (a+b>c && a+c>b && b+c>a) {
+            tra_ve = "tam giac";
+            if (a == b && b == c) {
+                tra_ve = "Tam giác đêu";
+            } else if (a == b || a == c || b == c) {
+                tra_ve = "Tam giác cân";
+            }
+            if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a) {
+                tra_ve = "Tam giac vuong";
+            }
+        }
+        kq.innerHTML = tra_ve;
+    }
+
+</script>
+</body>
+</html>
